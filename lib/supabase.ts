@@ -1,11 +1,21 @@
 import { createClient } from "@supabase/supabase-js";
 import { generateRandomCode, sanitizeSlug } from "./utils";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  process.env.SUPABASE_URL ||
+  process.env.POSTGRES_URL;
 
-// Verifica se as chaves reais do Supabase estão configuradas
+const supabaseAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  process.env.SUPABASE_ANON_KEY ||
+  process.env.SUPABASE_KEY;
+
+const supabaseServiceKey =
+  process.env.SUPABASE_SERVICE_ROLE_KEY ||
+  process.env.SUPABASE_SERVICE_KEY ||
+  supabaseAnonKey;
+
 export const isSupabaseConfigured = Boolean(
   supabaseUrl &&
     supabaseAnonKey &&
@@ -25,7 +35,6 @@ export interface ShortLink {
   created_at: string;
 }
 
-// Fallback em memória para testes locais sem configuração inicial do Supabase
 const globalMemory = global as unknown as {
   __demoLinks?: Map<string, ShortLink>;
 };
@@ -55,12 +64,9 @@ export async function createShortLink(
   originalUrl: string,
   customCode?: string
 ): Promise<{ link: ShortLink; isExisting?: boolean }> {
-  const code = customCode
-    ? sanitizeSlug(customCode)
-    : generateRandomCode(6);
+  const code = customCode ? sanitizeSlug(customCode) : generateRandomCode(6);
 
   if (supabase) {
-    // Verifica se o código já existe
     const { data: existing } = await supabase
       .from("links")
       .select("*")
@@ -91,7 +97,6 @@ export async function createShortLink(
     return { link: data as ShortLink };
   }
 
-  // Fallback em memória
   const existing = demoLinks.get(code);
   if (existing) {
     if (customCode) {
@@ -123,7 +128,6 @@ export async function registerClick(
     try {
       await supabase.rpc("increment_link_clicks", { link_code: cleanCode });
     } catch {
-      // Fallback update direto
       const { data: link } = await supabase
         .from("links")
         .select("id, clicks_count")

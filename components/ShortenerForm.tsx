@@ -47,7 +47,7 @@ export default function ShortenerForm() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "N�o foi poss�vel encurtar o link.");
+        throw new Error(data.error || "Não foi possível encurtar o link.");
       }
 
       const host = window.location.origin;
@@ -59,7 +59,6 @@ export default function ShortenerForm() {
         originalUrl: cleanUrl,
       });
 
-      // Gera o QR Code correspondente
       const qr = await QRCodeLib.toDataURL(fullShortUrl, {
         width: 320,
         margin: 2,
@@ -83,7 +82,6 @@ export default function ShortenerForm() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      // Fallback
       const el = document.createElement("textarea");
       el.value = result.shortUrl;
       document.body.appendChild(el);
@@ -142,21 +140,20 @@ export default function ShortenerForm() {
           </button>
         </div>
 
-        {/* Op��o de link personalizado */}
         <div className="pt-2 px-2 border-t border-slate-100 mt-2 flex items-center justify-between text-xs text-slate-500">
           <button
             type="button"
             onClick={() => setShowAdvanced(!showAdvanced)}
             className="text-brand-600 font-semibold hover:underline"
           >
-            {showAdvanced ? "Ocultar personaliza��o" : "+ Personalizar c�digo do link (opcional)"}
+            {showAdvanced ? "Ocultar personalização" : "+ Personalizar código do link (opcional)"}
           </button>
           <span className="hidden sm:inline">100% gratuito e sem cadastro</span>
         </div>
 
         {showAdvanced && (
           <div className="p-3 mt-2 bg-slate-50 rounded-xl border border-line flex flex-col sm:flex-row items-center gap-2">
-            <span className="text-xs text-slate-500 font-mono">encurtabr/</span>
+            <span className="text-xs text-slate-500 font-mono">encurtabr.com.br/</span>
             <input
               type="text"
               value={customCode}
@@ -169,15 +166,13 @@ export default function ShortenerForm() {
         )}
       </form>
 
-      {/* Alerta de erro */}
       {error && (
         <div className="mt-4 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm flex items-center justify-between animate-fadeIn">
           <span>{error}</span>
-          <button onClick={() => setError(null)} className="text-red-500 font-bold ml-2">�</button>
+          <button onClick={() => setError(null)} className="text-red-500 font-bold ml-2">×</button>
         </div>
       )}
 
-      {/* Resultado do Link Encurtado */}
       {result && (
         <div className="mt-6 p-5 sm:p-6 bg-brand-50 border border-brand-200 rounded-2xl animate-fadeIn">
           <div className="flex items-center justify-between mb-2">
@@ -189,7 +184,7 @@ export default function ShortenerForm() {
               className="text-xs font-semibold text-brand-700 hover:text-brand-800 flex items-center gap-1"
             >
               <BarChart2 className="w-3.5 h-3.5" />
-              Ver estat�sticas
+              Ver estatísticas
             </a>
           </div>
 
@@ -208,7 +203,6 @@ export default function ShortenerForm() {
             </a>
           </div>
 
-          {/* Bot�es de A��o */}
           <div className="flex flex-wrap items-center gap-2.5 mt-4">
             <button
               type="button"
@@ -216,7 +210,7 @@ export default function ShortenerForm() {
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-all"
             >
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-              {copied ? "Copiado para a �rea de transfer�ncia!" : "Copiar link"}
+              {copied ? "Copiado para a área de transferência!" : "Copiar link"}
             </button>
 
             <button
@@ -242,7 +236,6 @@ export default function ShortenerForm() {
         </div>
       )}
 
-      {/* Modal / Card de QR Code */}
       {showQrModal && qrCodeDataUrl && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl text-center relative border border-line">
@@ -250,7 +243,7 @@ export default function ShortenerForm() {
               onClick={() => setShowQrModal(false)}
               className="absolute top-4 right-4 text-slate-400 hover:text-ink font-bold text-lg"
             >
-              �
+              ×
             </button>
             <h3 className="font-bold text-lg text-ink mb-1">QR Code do seu Link</h3>
             <p className="text-xs text-slate-500 mb-4 truncate">{result?.shortUrl}</p>

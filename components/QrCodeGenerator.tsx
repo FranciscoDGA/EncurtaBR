@@ -27,7 +27,6 @@ export default function QrCodeGenerator({ initialUrl = "" }: { initialUrl?: stri
   return (
     <div className="bg-white border border-line rounded-2xl p-6 shadow-sm">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Formul�rio */}
         <div className="space-y-4">
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
@@ -45,7 +44,7 @@ export default function QrCodeGenerator({ initialUrl = "" }: { initialUrl?: stri
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                Cor do C�digo
+                Cor do Código
               </label>
               <div className="flex items-center gap-2">
                 <input
@@ -60,7 +59,7 @@ export default function QrCodeGenerator({ initialUrl = "" }: { initialUrl?: stri
 
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                Resolu��o
+                Resolução
               </label>
               <select
                 value={size}
@@ -68,18 +67,17 @@ export default function QrCodeGenerator({ initialUrl = "" }: { initialUrl?: stri
                 className="w-full px-3 py-2.5 bg-slate-50 border border-line rounded-xl text-xs text-slate-700 outline-none"
               >
                 <option value={200}>Pequeno (200x200)</option>
-                <option value={300}>M�dio (300x300)</option>
-                <option value={500}>Alta Resolu��o (500x500)</option>
+                <option value={300}>Médio (300x300)</option>
+                <option value={500}>Alta Resolução (500x500)</option>
               </select>
             </div>
           </div>
 
           <p className="text-xs text-slate-500">
-            ? O QR Code � gerado instantaneamente no seu navegador sem limite de uso.
+            ✓ O QR Code é gerado instantaneamente no seu navegador sem limite de uso.
           </p>
         </div>
 
-        {/* Pr�-visualiza��o do QR Code */}
         <div className="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-xl border border-line text-center">
           {dataUrl ? (
             <>

@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Mail, CheckCircle2, Shield, Zap, Sparkles } from "lucide-react";
+import { Mail, CheckCircle2, Shield, Zap, Sparkles, Server, Globe2, HeartHandshake } from "lucide-react";
 import AdBanner from "@/components/AdBanner";
 
 export const metadata: Metadata = {
-  title: "Sobre e Contato | EncurtaBR",
-  description: "Conheça o EncurtaBR: nossa missão de simplificar links, oferecer QR Codes gratuitos e potencializar campanhas no Brasil.",
+  title: "Sobre o EncurtaBR | Missão, Tecnologia e Propósito",
+  description: "Conheça a história, a missão e a infraestrutura por trás do EncurtaBR: utilitários digitais gratuitos, rápidos e seguros feitos para o público brasileiro.",
   alternates: {
     canonical: "/sobre",
   },
@@ -16,65 +16,76 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <div className="bg-white border border-line rounded-3xl p-6 sm:p-12 shadow-sm space-y-10">
         <div>
-          <span className="text-xs font-bold text-brand-600 uppercase tracking-wider">
-            Nossa Proposta
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-50 text-brand-700 text-xs font-bold rounded-full mb-3">
+            <HeartHandshake className="w-3.5 h-3.5" />
+            Nossa História & Missão
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">
             Sobre o EncurtaBR
           </h1>
-          <p className="text-base text-slate-600 mt-3 max-w-2xl leading-relaxed">
-            O <strong>EncurtaBR</strong> nasceu com a missão de fornecer uma suíte de utilidades digitais rápida, intuitiva e sem burocracia para criadores de conteúdo, profissionais de marketing, e-commerces e empreendedores no Brasil.
+          <p className="text-base sm:text-lg text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            O <strong>EncurtaBR</strong> é uma plataforma brasileira de utilidades digitais criada com o propósito de simplificar a forma como links, campanhas e QR Codes são compartilhados na internet.
           </p>
         </div>
 
-        {/* Pilares */}
+        <div className="prose prose-slate max-w-none text-sm sm:text-base text-slate-600 space-y-4 leading-relaxed">
+          <p>
+            Muitas ferramentas tradicionais de encurtamento disponíveis na web tornaram-se lentas, repletas de telas intermediárias abusivas ou exigem cadastros burocráticos e planos pagos para funcionalidades básicas. Nós acreditamos que a internet precisa de ferramentas diretas, limpas e instantâneas.
+          </p>
+          <p>
+            No <strong>EncurtaBR</strong>, você encurta uma URL em 1 clique, gera um QR Code em alta definição imediatamente e cria URLs com parâmetros UTM prontos para campanhas no Instagram, TikTok, Google Ads e WhatsApp, sem pagar nada por isso.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="p-5 bg-slate-50 border border-line rounded-2xl">
-            <div className="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold mb-3">
-              <Zap className="w-5 h-5" />
+          <div className="p-6 bg-slate-50 border border-line rounded-2xl">
+            <div className="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold mb-4">
+              <Zap className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-ink text-base mb-1">Velocidade Instantânea</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Infraestrutura de ponta na borda (Edge Network) que garante redirecionamentos em milissegundos para seus clientes.
+            <h3 className="font-bold text-ink text-base mb-1.5">Redirecionamento Rápido</h3>
+            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+              Infraestrutura distribuída com baixa latência para garantir que seus visitantes não esperem para chegar ao destino.
             </p>
           </div>
 
-          <div className="p-5 bg-slate-50 border border-line rounded-2xl">
-            <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-3">
-              <Shield className="w-5 h-5" />
+          <div className="p-6 bg-slate-50 border border-line rounded-2xl">
+            <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4">
+              <Shield className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-ink text-base mb-1">Privacidade e Respeito</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Totalmente em conformidade com a LGPD. Não vendemos dados de navegação e respeitamos sua privacidade.
+            <h3 className="font-bold text-ink text-base mb-1.5">Segurança & LGPD</h3>
+            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+              Foco rigoroso em privacidade, combate a links maliciosos e respeito total às diretrizes da legislação brasileira.
             </p>
           </div>
 
-          <div className="p-5 bg-slate-50 border border-line rounded-2xl">
-            <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-3">
-              <Sparkles className="w-5 h-5" />
+          <div className="p-6 bg-slate-50 border border-line rounded-2xl">
+            <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-4">
+              <Sparkles className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-ink text-base mb-1">100% Gratuito</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Você pode encurtar links, gerar QR Codes e criar URLs com parâmetros UTM sem necessidade de cadastro ou cartão.
+            <h3 className="font-bold text-ink text-base mb-1.5">Acesso 100% Livre</h3>
+            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+              Ferramentas completas disponíveis para produtores de conteúdo, e-commerces, profissionais liberais e agências.
             </p>
           </div>
         </div>
 
-        {/* Informações de Contato */}
         <div className="p-8 bg-slate-50 border border-line rounded-2xl space-y-4">
           <h2 className="text-xl font-bold text-ink flex items-center gap-2">
-            <Mail className="w-5 h-5 text-brand-600" />
-            Fale Conosco e Denúncias
+            <Server className="w-5 h-5 text-brand-600" />
+            Tecnologia de Ponta
           </h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Dúvidas, sugestões de novos recursos, denúncias de links suspeitos ou parcerias comerciais? Nossa equipe está pronta para atendê-lo:
+            Desenvolvido utilizando as tecnologias mais modernas do ecossistema web, incluindo Next.js, TypeScript, banco de dados relacional distribuído e servidores na borda (Edge Network). Essa arquitetura proporciona estabilidade superior mesmo sob picos intensos de tráfego.
           </p>
-          <div className="p-4 bg-white border border-line rounded-xl inline-block text-sm font-mono font-semibold text-brand-700">
-            contato@encurtabr.com.br
+          <div className="pt-2">
+            <Link
+              href="/contato"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-sm"
+            >
+              <Mail className="w-4 h-4" />
+              Fale com nossa equipe
+            </Link>
           </div>
-          <p className="text-xs text-slate-400">
-            Tempo médio de resposta: até 24 horas úteis.
-          </p>
         </div>
 
         <AdBanner />

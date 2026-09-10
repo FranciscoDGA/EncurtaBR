@@ -13,7 +13,6 @@ export default function UtmBuilder() {
   const [term, setTerm] = useState("");
   const [copied, setCopied] = useState(false);
 
-  // Presets r�pidos
   const applyPreset = (pSource: string, pMedium: string, pContent?: string) => {
     setSource(pSource);
     setMedium(pMedium);
@@ -50,10 +49,9 @@ export default function UtmBuilder() {
 
   return (
     <div className="bg-white border border-line rounded-2xl p-6 sm:p-8 shadow-sm">
-      {/* Presets R�pidos */}
       <div className="mb-6">
         <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-2">
-          Modelos Prontos (Clique para preencher r�pido)
+          Modelos Prontos (Clique para preencher rápido)
         </span>
         <div className="flex flex-wrap gap-2">
           <button
@@ -61,40 +59,39 @@ export default function UtmBuilder() {
             onClick={() => applyPreset("instagram", "social", "link_bio")}
             className="px-3 py-1.5 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-xs font-semibold rounded-lg text-slate-700 transition-colors"
           >
-            ?? Instagram Bio
+            📸 Instagram Bio
           </button>
           <button
             type="button"
             onClick={() => applyPreset("instagram", "stories", "arrasta_cima")}
             className="px-3 py-1.5 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-xs font-semibold rounded-lg text-slate-700 transition-colors"
           >
-            ?? Instagram Stories
+            📱 Instagram Stories
           </button>
           <button
             type="button"
             onClick={() => applyPreset("facebook", "paid_social", "feed_ad")}
             className="px-3 py-1.5 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-xs font-semibold rounded-lg text-slate-700 transition-colors"
           >
-            ?? Facebook Ads
+            🎯 Facebook Ads
           </button>
           <button
             type="button"
             onClick={() => applyPreset("google", "cpc")}
             className="px-3 py-1.5 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-xs font-semibold rounded-lg text-slate-700 transition-colors"
           >
-            ?? Google Ads
+            🔍 Google Ads
           </button>
           <button
             type="button"
             onClick={() => applyPreset("newsletter", "email")}
             className="px-3 py-1.5 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-xs font-semibold rounded-lg text-slate-700 transition-colors"
           >
-            ?? E-mail Marketing
+            ✉️ E-mail Marketing
           </button>
         </div>
       </div>
 
-      {/* Formul�rio de Campos */}
       <div className="space-y-4">
         <div>
           <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
@@ -125,7 +122,7 @@ export default function UtmBuilder() {
 
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-              M�dia / Canal (utm_medium)
+              Mídia / Canal (utm_medium)
             </label>
             <input
               type="text"
@@ -153,7 +150,7 @@ export default function UtmBuilder() {
 
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-              Conte�do / Varia��o (utm_content)
+              Conteúdo / Variação (utm_content)
             </label>
             <input
               type="text"
@@ -166,11 +163,10 @@ export default function UtmBuilder() {
         </div>
       </div>
 
-      {/* URL Final Gerada */}
       {finalUrl && (
         <div className="mt-8 p-5 bg-brand-50 border border-brand-200 rounded-2xl animate-fadeIn">
           <span className="text-xs font-bold text-brand-700 uppercase tracking-wider block mb-2">
-            Sua URL Rastre�vel com UTM:
+            Sua URL Rastreável com UTM:
           </span>
           <div className="bg-white border border-brand-200 rounded-xl p-3 sm:p-4 mb-4">
             <code className="text-xs sm:text-sm font-bold text-brand-800 break-all select-all block">

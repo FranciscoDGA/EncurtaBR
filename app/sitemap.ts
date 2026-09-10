@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/qr-code",
     "/utm",
     "/sobre",
+    "/contato",
     "/privacidade",
     "/termos",
   ];

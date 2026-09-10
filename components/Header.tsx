@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Link as LinkIcon, QrCode, SlidersHorizontal, BarChart3 } from "lucide-react";
+import { Menu, X, Link as LinkIcon, QrCode, SlidersHorizontal, BarChart3, Mail } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-slate-50/95 backdrop-blur-md border-b border-line">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Brand */}
         <Link href="/" className="flex items-center gap-2.5 font-black text-xl tracking-tight text-ink">
           <span className="w-8 h-8 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black text-base shadow-sm shadow-brand-600/30">
             E
@@ -18,7 +17,6 @@ export default function Header() {
           <span>Encurta<span className="text-brand-600">BR</span></span>
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
           <Link href="/#ferramentas" className="hover:text-brand-600 transition-colors">
             Ferramentas
@@ -32,9 +30,11 @@ export default function Header() {
           <Link href="/#como-funciona" className="hover:text-brand-600 transition-colors">
             Como Funciona
           </Link>
+          <Link href="/contato" className="hover:text-brand-600 transition-colors">
+            Contato
+          </Link>
         </nav>
 
-        {/* Action Button */}
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/#encurtar"
@@ -44,17 +44,15 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-slate-600 hover:text-ink focus:outline-none"
-          aria-label="Abrir menu"
+          aria-label="Abrir menu de navegação"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
       {isOpen && (
         <div className="md:hidden border-b border-line bg-white px-4 pt-3 pb-5 space-y-3">
           <Link
@@ -88,6 +86,14 @@ export default function Header() {
           >
             <BarChart3 className="w-4 h-4 text-brand-600" />
             Como Funciona
+          </Link>
+          <Link
+            href="/contato"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-2 py-2 text-sm font-semibold text-slate-700 hover:text-brand-600"
+          >
+            <Mail className="w-4 h-4 text-brand-600" />
+            Fale Conosco
           </Link>
           <div className="pt-2">
             <Link
