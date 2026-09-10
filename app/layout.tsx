@@ -5,7 +5,9 @@ import Footer from "@/components/Footer";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://encurtabr.com.br");
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://encurta-br.vercel.app");
 const gscVerification =
   process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
   "qH9gltE4Lk1p5ONSBCSMwkXGR9eqixIDruwOJLPqlZQ";
