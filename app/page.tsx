@@ -265,6 +265,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* GUIA EDUCATIVO E CONTEÚDO EDITORIAL (Google AdSense & SEO Compliance) */}
+      <section className="py-16 px-4 sm:px-6 bg-white border-t border-line">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold text-brand-600 uppercase tracking-wider">
+              Conteúdo & Dicas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-ink mt-1">
+              Guia Completo: Como potencializar seus links e campanhas
+            </h2>
+            <p className="text-slate-500 text-sm mt-2">
+              Entenda como links curtos, QR Codes e parâmetros UTM melhoram a experiência do usuário e as conversões.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 text-sm text-slate-600 leading-relaxed">
+            <div className="p-6 bg-slate-50 rounded-2xl border border-line space-y-3">
+              <h3 className="font-bold text-ink text-base">
+                Por que encurtar URLs antes de compartilhar?
+              </h3>
+              <p>
+                Links longos, cheios de códigos alfanuméricos e caracteres especiais, transmitem desconfiança e poluem o visual de publicações. Ao utilizar o <strong>EncurtaBR</strong>, você transforma endereços complexos em links elegantes, que ocupam menos espaço na bio do Instagram, em mensagens de WhatsApp ou em postagens no Twitter/X.
+              </p>
+              <p>
+                Além da estética, links curtos são fundamentais em materiais impressos como panfletos, cartões e cardápios, pois diminuem a probabilidade de erros de digitação por parte do consumidor.
+              </p>
+            </div>
+
+            <div className="p-6 bg-slate-50 rounded-2xl border border-line space-y-3">
+              <h3 className="font-bold text-ink text-base">
+                O papel estratégico dos QR Codes no comércio físico
+              </h3>
+              <p>
+                A tecnologia QR Code conecta o mundo físico ao digital em menos de um segundo. Ao imprimir um código em embalagens, vitrines ou mesas de restaurantes, você permite que o cliente acesse seu catálogo, canal de atendimento no WhatsApp ou página de checkout sem digitar nenhuma letra.
+              </p>
+              <p>
+                Recomendamos sempre testar a leitura do código sob diferentes condições de luz antes de rodar impressões em larga escala.
+              </p>
+            </div>
+
+            <div className="p-6 bg-slate-50 rounded-2xl border border-line space-y-3">
+              <h3 className="font-bold text-ink text-base">
+                Como medir o retorno real com parâmetros UTM
+              </h3>
+              <p>
+                Saber de onde vêm seus clientes é a chave para não desperdiçar verba em anúncios. Ao utilizar o <strong>Gerador de UTM</strong> do EncurtaBR, você adiciona tags padronizadas que são lidas automaticamente pelo Google Analytics 4 (GA4), Meta Ads Manager e plataformas de afiliados.
+              </p>
+              <p>
+                Dessa forma, você descobre com precisão se suas vendas foram geradas por um story no Instagram, um anúncio no feed do Facebook ou um disparo de e-mail marketing.
+              </p>
+            </div>
+
+            <div className="p-6 bg-slate-50 rounded-2xl border border-line space-y-3">
+              <h3 className="font-bold text-ink text-base">
+                Dicas de segurança para links na internet
+              </h3>
+              <p>
+                A segurança dos usuários é prioritária no EncurtaBR. Sempre verifique se o destino original possui certificado de segurança HTTPS e desconfie de ofertas excessivamente tentadoras.
+              </p>
+              <p>
+                Nossa equipe monitora denúncias 24 horas por dia e suspende preventivamente qualquer link que direcione para páginas fraudulentas ou tentativas de clonagem de contas (phishing).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section className="py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto bg-slate-900 rounded-3xl p-8 sm:p-14 text-center text-white shadow-xl">
