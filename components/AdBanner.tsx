@@ -25,17 +25,6 @@ export default function AdBanner({ slot, className = "" }: AdBannerProps) {
     );
   }
 
-  // Placeholder elegante de anúncio (conforme layout de referência)
-  return (
-    <div
-      className={`my-8 min-h-[90px] border border-dashed border-slate-300 rounded-2xl flex flex-col items-center justify-center bg-white/70 text-slate-400 text-xs px-4 py-3 select-none ${className}`}
-    >
-      <span className="font-semibold uppercase tracking-wider text-[11px] text-slate-400">
-        Publicidade
-      </span>
-      <span className="text-[11px] text-slate-300 mt-0.5">
-        Espaço reservado para anúncios do Google AdSense
-      </span>
-    </div>
-  );
+  // Se ainda não houver anúncio ativo, não renderiza nada para manter o site 100% limpo e profissional
+  return null;
 }
