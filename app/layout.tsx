@@ -3,8 +3,12 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://encurtabr.com.br";
-const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://encurtabr.com.br");
+const gscVerification =
+  process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
+  "qH9gltE4Lk1p5ONSBCSMwkXGR9eqixIDruwOJLPqlZQ";
 const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
@@ -67,6 +71,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <head>
+        {/* Google Search Console Verification Tag */}
+        <meta
+          name="google-site-verification"
+          content="qH9gltE4Lk1p5ONSBCSMwkXGR9eqixIDruwOJLPqlZQ"
+        />
         {/* Google AdSense Script (quando aprovado) */}
         {adsenseId && (
           <script
