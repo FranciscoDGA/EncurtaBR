@@ -15,6 +15,9 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) return;
+    const dest = subject === 'denuncia' ? 'abuso@encurtabr.com.br' : 'contato@encurtabr.com.br';
+    const mailto = `mailto:${dest}?subject=${encodeURIComponent(`[EncurtaBR] ${subject.toUpperCase()}: Contato de ${name}`)}&body=${encodeURIComponent(`Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`)}`;
+    window.location.href = mailto;
     setSubmitted(true);
   };
 

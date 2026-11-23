@@ -1,7 +1,29 @@
 export function isValidUrl(urlString: string): boolean {
   try {
-    const url = new URL(urlString.trim());
-    return url.protocol === "http:" || url.protocol === "https:";
+    const trimmed = urlString.trim();
+    const url = new URL(trimmed);
+    if (url.protocol !== "http:" && url.protocol !== "https:") {
+      return false;
+    }
+
+    const hostname = url.hostname.toLowerCase();
+
+    // Bloquear loops para localhost e redes internas / metadados (prevenção SSRF e abusos)
+    if (
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "::1" ||
+      hostname === "169.254.169.254" ||
+      hostname.endsWith(".local") ||
+      hostname.endsWith(".internal") ||
+      hostname.startsWith("10.") ||
+      hostname.startsWith("192.168.") ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(hostname)
+    ) {
+      return false;
+    }
+
+    return true;
   } catch {
     return false;
   }

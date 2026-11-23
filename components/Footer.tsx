@@ -67,6 +67,11 @@ export default function Footer() {
                   Fale Conosco / Contato
                 </Link>
               </li>
+              <li>
+                <Link href="/contato" className="text-red-500 hover:text-red-600 font-medium transition-colors">
+                  Denunciar Link Abusivo
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

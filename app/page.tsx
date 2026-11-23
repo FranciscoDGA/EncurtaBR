@@ -249,7 +249,7 @@ export default function Home() {
                 Os links encurtados têm data de expiração?
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
-                Não. Os links criados permanecem ativos indefinidamente em nossa base de dados, garantindo que seus materiais impressos e digitais continuem funcionando.
+                Os links criados no plano gratuito permanecem ativos continuamente para suas divulgações, cardápios e redes sociais. Contudo, não recomendamos depender exclusivamente de links gratuitos para sistemas críticos sem redundância, e links com comportamentos suspeitos ou inativos por longos períodos podem ser arquivados conforme nossos termos.
               </p>
             </div>
 
@@ -325,7 +325,7 @@ export default function Home() {
                 A segurança dos usuários é prioritária no EncurtaBR. Sempre verifique se o destino original possui certificado de segurança HTTPS e desconfie de ofertas excessivamente tentadoras.
               </p>
               <p>
-                Nossa equipe monitora denúncias 24 horas por dia e suspende preventivamente qualquer link que direcione para páginas fraudulentas ou tentativas de clonagem de contas (phishing).
+                Nossa equipe monitora ativamente as notificações do canal de denúncias e suspende preventivamente qualquer link que direcione para páginas fraudulentas, phishing ou distribuição não autorizada de conteúdo.
               </p>
             </div>
           </div>
